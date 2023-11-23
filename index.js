@@ -1,91 +1,17 @@
+
 const express = require('express');
-const { BlobServiceClient } = require('@azure/storage-blob');
-const multer = require('multer');
-const path = require('path');
-const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
+const bodyParser = require('body-parser');
+const path = require('path');
+const app = express();
 
-var app = express();
-
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
-
-// Connect to SQLite database
-const db = new sqlite3.Database('users5.db');
-
-// Your Azure Storage account connection string
-const connectionString = 'DefaultEndpointsProtocol=https;AccountName=cloudshell2048044273;AccountKey=Wv9EsrgHgwekNF436wdlHZnnElfnFWlfQpDk1+c1zXdcQCUszAVjsu1RIutYs88yi456JzX0Q0KD+AStG65zaw==;EndpointSuffix=core.windows.net';
-
-// Create a BlobServiceClient
-const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
-
-// Create a container client for a specific container (replace 'containerName' with your container name)
-const containerName = 'firewall';
-const containerClient = blobServiceClient.getContainerClient(containerName);
-
-// Middleware to parse request bodies
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Multer middleware for handling file uploads
-const storage = multer.memoryStorage(); // Use memory storage for simplicity
-const upload = multer({ storage: storage });
-
-// ... (existing code)
-app.get('/upload', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'upload.html'));
-});
-// Handle file upload
-app.post('/upload', upload.single('file'), async (req, res) => {
-  const file = req.file.buffer;
-
-  // Get a block blob client with a unique name
-  const blobName = Date.now() + '-' + req.file.originalname;
-  const blockBlobClient = containerClient.getBlockBlobClient(blobName);
-
-  // Upload the file
-  try {
-    await blockBlobClient.upload(file, file.length);
-    res.send('File uploaded successfully');
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('File upload failed');
-  }
-});
-
-
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Create a table for users if it doesn't exist
-db.run(`
-CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  phone TEXT NOT NULL,
-  password TEXT NOT NULL
-);)`
-);
-
-// Create users table if not exists
-db.run(`
-  CREATE TABLE IF NOT EXISTS cash_on_delivery_details (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    address TEXT,
-    email TEXT,
-    locality_apartment TEXT,
-    pincode TEXT,
-    contact_no TEXT,
-    date TEXT,
-    time_slot TEXT
-  )
-`);
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
 
 // Define a route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
+
 });
 
 // Define a route for the registration page
@@ -166,11 +92,6 @@ app.post('/checkout', (req, res) => {
   );
 });
 
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
-
 app.get('/feedback', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Feedback Form HTML.html'));
 });
@@ -183,6 +104,7 @@ app.get('/chat', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
 
+
 app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
-});
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
