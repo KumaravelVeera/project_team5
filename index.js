@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const port = 3002;
+const port = 'azurewebkrs.azurewebsites.net';
 
 // Connect to SQLite database
 const db = new sqlite3.Database('users5.db');
