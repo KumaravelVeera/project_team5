@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .chat-container {
+            max-width: 400px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chat-body {
+            padding: 10px;
+            overflow-y: scroll;
+            max-height: 300px;
+        }
+
+        .user-message, .bot-message {
+            margin: 10px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .user-message {
+            background-color: #64B5F6;
+            color: white;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #E0E0E0;
+            text-align: left;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">Chatbot</div>
+        <div class="chat-body" id="chatBody">
+            <div class="bot-message">Hello! How can I help you today?</div>
+        </div>
+        <input type="text" id="userInput" class="chat-input" placeholder="Type your message...">
+    </div>
+
+    <script>
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            if (userInput.trim() === "") {
+                return;
+            }
+
+            var chatBody = document.getElementById("chatBody");
+            var userMessage = document.createElement("div");
+            userMessage.className = "user-message";
+            userMessage.textContent = userInput;
+            chatBody.appendChild(userMessage);
+
+            // Simulate a bot response (you would replace this with actual chatbot logic)
+            var botMessage = document.createElement("div");
+            botMessage.className = "bot-message";
+            botMessage.textContent = "I'm just a simple example chatbot. You said: " + userInput;
+            chatBody.appendChild(botMessage);
+
+            // Clear the user input field
+            document.getElementById("userInput").value = "";
+
+            // Scroll to the bottom of the chat
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('background.jpg'); /* Replace 'background.jpg' with your background image path */
+    background-size: cover;
+    background-position: center;
+}
+body {
+    background: #be9595 url('background.jpg') center/cover no-repeat;
+    /* background-color: #f0f0f0; */ /* Uncomment and customize if you want a background color */
+    /* background-image: url('background.jpg'); */ /* Uncomment and customize for a background image */
+    /* background-position: center; */ /* Uncomment and customize for background position */
+    /* background-size: cover; */ /* Uncomment and customize for background size */
+    /* background-repeat: no-repeat; */ /* Uncomment and customize for background repeat */
+}
+
+.welcome-container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+h1, p {
+    margin-bottom: 20px;
+}
+
+#countdown {
+    font-size: 24px;
+    color: #666;
+}

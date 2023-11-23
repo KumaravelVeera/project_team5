@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+    <html>
+    
+        <head>
+    
+        <meta charset="utf-8">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!--==Title==================================-->
+        <title>
+    
+            Healthcare Products Store
+    
+        </title>
+    
+        <!--==Stylesheet=============================-->
+        <link rel="stylesheet" type="text/css" href="Home Page CSS.css">
+    
+        <!--==Fav-icon===============================-->
+        <link rel="shortcut icon" href="images/fav-icon.png"/>
+    
+        <!--==Using-Font-Awesome=====================-->
+        <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    
+        <script src = 'Home Page JS.js' defer></script>
+            
+      
+    
+        </head>
+    
+        <body>
+    
+            <!--==Navigation================================-->
+            <nav class="navigation">
+    
+                <!--logo-------->
+                <a href="/" class="logo">
+    
+                    <span>K</span>RS
+    
+                </a>
+    
+                <!--menu-btn---->
+                <input type="checkbox" class="menu-btn" id="menu-btn">
+    
+                <label for="menu-btn" class="menu-icon">
+    
+                    <span class="nav-icon"></span>
+    
+                </label>
+    
+                <!--menu-------->
+                <ul class="menu">
+    
+                    <li>
+                        <a href="/" class="active">
+                            
+                            Home
+    
+                        </a>
+                    
+                    </li>
+    
+                    <li>
+    
+                        <a href="#category">
+    
+                            Categories
+                        
+                        </a>
+                    
+                    </li>
+    
+                    <li>
+    
+                        <a href="#popular-bundle-pack">
+                            
+                            Packages
+                        
+                        </a>
+                    
+                    </li>
+    
+                    
+                    <li>
+                        
+                        <a href="/feedback">
+                            
+                            Feedback
+                        
+                        </a>
+                    
+                    </li>
+                    
+                    <li>
+    
+                        <a href="/aboutus">
+    
+                            About&nbsp;us
+    
+                        </a>
+    
+                    </li>
+    
+                    <li>
+                        
+                        <a href="#download-app">
+                            
+                            App
+                        
+                        </a>
+                    
+                    </li>
+    
+                    <li>
+                        
+                        <a href="/register">
+                                
+                            Sign&nbsp;up
+                            
+                        </a>
+                        
+                    </li>
+    
+                    
+                    <li>
+                        
+                        <a href="/login">
+                            
+                            Login
+                        
+                        </a>
+                    
+                    </li>
+
+                    <li>
+                        
+                        <a href="/chat">
+                            
+                            Chat
+                        
+                        </a>
+                    
+                    </li>
+    
+    
+                    </ul>
+    
+                <!--right-nav-(cart-like)-->
+                <div class="right-nav">
+    
+                    <!--like----->
+                   
+    
+                    <!--cart----->
+                    <a href="Shopping Cart HTML.html" class="cart">
+                        <header>
+                            
+                            <div class="shopping">
+                                <img src="images/cart-check.svg">
+                                <span class="quantity"></span>
+                            </div>
+                        </header>
+                          
+                       
+    
+                        
+    
+                    </a>
+                    
+    
+                    <!--cart----->
+                  
+                    </a>
+    
+                </div>
+    
+            </nav>
+    
+            <!--nav-end--------------------->
+            <!--==Search-banner=======================================-->
+            <section id="search-banner">
+    
+                <!--bg--------->
+                <img alt="bg" class="bg-1" src="https://img.freepik.com/premium-vector/illustration-cartoon-pharmacist-glasses-counter-pharmacy-background-shelves-with-medications_253349-936.jpg">
+    
+                
+              
+    
+                <!--text------->
+                <div class="search-banner-text">
+    
+                    <h1>
+                        
+                        Order Your Daily Health Products
+                    
+                    </h1>
+    
+                    <strong>
+                        
+                        #Free Delivery
+                    
+                    </strong>
+    
+                    <!--search-box------>
+                    
+    
+                    <br>
+    
+                    <h3>
+    
+                        <a href = 'Best Deals HTML.html' style = 'color: #11759f'>
+    
+                            Click here to learn about today's best deals
+    
+                        </a>
+    
+                    </h3>
+    
+                </div>
+    
+            </section>
+    
+            <!--search-banner-end--------------->
+    
+            <h2 class = 'sale-heading'>
+    
+                Pongal Sale is Live For
+    
+            </h2>
+    
+            <div class="countdown-container">
+    
+                <div class="countdown-el days-c">
+                    <p class="big-text" id="days">0</p>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-el hours-c">
+                    <p class="big-text" id="hours">0</p>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-el mins-c">
+                    <p class="big-text" id="mins">0</p>
+                    <span>Min</span>
+                </div>
+                <div class="countdown-el seconds-c">
+                    <p class="big-text" id="seconds">0</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <!--==category=========================================-->
+            <section id="category">
+    
+                <!--heading---------------->
+                <div class="category-heading">
+    
+                    <h2>
+                        
+                        Category
+                    
+                    </h2>
+    
+                    <span>
+                        
+                        All
+                    
+                    </span>
+    
+                </div>
+    
+                <!--box-container---------->
+                <div class="category-container">
+    
+                    <!--box---------------->
+                    <a class="category-box" href = 'Food Drink Category HTML.html'>
+                        <img alt=" Energy Drink" src="https://cdn-icons-png.flaticon.com/512/71/71984.png">
+                        <span>Health & <br> Energy Drink</span>
+                    </a>
+                    <!--box---------------->
+                    <a class="category-box" href = 'Medicine Category Page HTML.html'>
+                        <img alt="Medicines" src="images/medicine.png">
+                        <span>Medicine</span>
+                    </a>
+                    <!--box---------------->
+                    <a class="category-box" href="Baby Care Category Page HTML.html">
+                        <img alt="Baby Care Products" src="https://i.imgur.com/uvd01HH.png">
+                        <span>Baby Care</span>
+                    </a>
+                    <!--box---------------->
+                    <a class="category-box" href = 'Weight Gainer Page HTML.html'>
+                        <img alt="Weight Gainer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_v54tTyXGuUOeQ8N-uO_dya4o-_I9sEs2CpvzkpfLGP-ikoIwWLHW4YXem-58hgI23Rc&usqp=CAU">
+                        <span>Weight Gainer</span>
+                    </a>
+                    <!--box---------------->
+                    <a class="category-box" href = 'Beauty Category Page HTML.html'>
+                        <img alt="Beauty Products" src="https://i.imgur.com/Bm0yLex.png">
+                        <span>Beauty</span>
+                    </a>
+                    <!--box---------------->
+                   </a>
+                </div>
+                
+            </section>
+            <!--category-end----------------------------------->
+            <!--==Products====================================-->
+            <section id="popular-product">
+                <!--heading----------->
+                <div class="product-heading">
+                    <h3>Popular Product</h3>
+                    <span>All</span>
+                </div>
+                <!--box-container------>
+                <div class="product-container">
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="Boost" src="images/1.webp">
+                        <strong>Boost</strong>
+                        <span class="quantity">500 gm</span>
+                        <span class="price">Rs. 299</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="bi bi-cart-check"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="Horlicks" src="images/2.png">
+                        <strong>Horlicks</strong>
+                        <span class="quantity">500 gm</span>
+                        <span class="price">Rs. 275</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="bi bi-cart-check"></i></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="Johnson's Baby Oil" src="https://i.imgur.com/0LKWxiJ.jpg">
+                        <strong>Johnson's Baby Oil</strong>
+                        <span class="quantity">500 ml</span>
+                        <span class="price">Rs. 425</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="bi bi-cart-check"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="Mama Earth Baby Moisturizer" src="https://i.imgur.com/DEONooZ.jpg">
+                        <strong>Mama Earth Baby Moisturizer</strong>
+                        <span class="quantity">400 ml</span>
+                        <span class="price">Rs. 339.15</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="bi bi-cart-check"></i></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="CUFRIL-D Cough Syrup" src="https://i.imgur.com/t3jlpYD.jpg">
+                        <strong>CUFRIL-D Cough Syrup</strong>
+                        <span class="quantity">10 Tablets</span>
+                        <span class="price">Rs. 88</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="Cetirizine" src="https://i.imgur.com/QWMkLQ6.jpg">
+                        <strong>Cetirizine</strong>
+                        <span class="quantity">10 Tablets</span>
+                        <span class="price">Rs. 16.10</span>
+                        <!--cart-btn------->
+                        <a href="Shopping Cart HTML.html" class="cart-btn">
+                            <i class="bi bi-cart-check"></i> Add to Cart
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="bi bi-cart-check"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!--popular-product-end--------------------->
+            <!--Popular-bundle-pack===================================-->
+            <section id="popular-bundle-pack">
+                <!--heading-------------->
+                <div class="product-heading">
+                    <h3>Popular Bundle Pack</h3>
+                </div>
+                <!--box-container------>
+                <div class="product-container">
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://img.freepik.com/premium-photo/tablets_196038-16820.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais">
+                        <strong>Big Pack</strong>
+                        <span class="quantity">Bandage,Cetirizine, CUFRIL-D Cough Syrup, Cheston Cold,+10</span>
+                        <span class="price">Rs. 500</span>
+                        <!--cart-btn------->
+                        
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://img.freepik.com/premium-photo/medical-bottles-heart-pills-isolated-white-background_185193-8407.jpg">
+                        <strong>Large Pack</strong>
+                        <span class="quantity">Oilment,CUFRIL-D Cough Syrup, Cheston Cold,+7</span>
+                        <span class="price">Rs. 400</span>
+                        <!--cart-btn------->
+                        
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://img.freepik.com/premium-photo/brown-medical-bottles-pills-isolated-white-background_185193-8416.jpg">
+                        <strong>Small Pack</strong>
+                        <span class="quantity">Oilment,CUFRIL-D Cough Syrup, Cheston Cold,+4</span>
+                        <span class="price">Rs. 200</span>
+                        <!--cart-btn------->
+                        
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://m.media-amazon.com/images/I/71gfez4ldsL.jpg">
+                        <strong>Big Pack</strong>
+                        <span class="quantity">Facewash,Handwash,Shampoo,Conditioner,Curling Tong,+8</span>
+                        <span class="price">Rs. 1800</span>
+                        <!--cart-btn------->
+                       
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://www.giftmyemotions.com/image/cache/floralnation/amazone/GBH-056-800x800.jpg">
+                        <strong>Large Pack</strong>
+                        <span class="quantity">Shampoo,Conditioner,Hair Color,Curling Tong,+10</span>
+                        <span class="price">Rs. 1500</span>
+                        <!--cart-btn------->
+                       
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                    <!--box---------->
+                    <div class="product-box">
+                        <img alt="pack" src="https://giftcart.com/cdn/shop/products/cm01gbgt1656-0.webp?v=1657784934">
+                        <strong>Small Pack</strong>
+                        <span class="quantity">Shampoo,Conditioner,Hair Color,+3</span>
+                        <span class="price">Rs. 1000</span>
+                        <!--cart-btn------->
+                        
+                        </a>
+                        <!--like-btn------->
+                        <a class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!--popular-bundle-pack-end-------------------------------->
+            <!--==Clients===============================================-->
+            <section id="clients">
+                <!--heading---------------->
+                <div class="client-heading">
+                    <h3>What Our Clients Say</h3>
+                </div>
+                <!--box-container---------->
+                <div class="client-box-container">
+                    <!--box------------->
+                    <div class="client-box">
+                        <!--==profile===-->
+                        <div class="client-profile">
+                            <!--img--->
+                            <img alt="client" src="https://i.imgur.com/FNVH9z6.jpg">
+                            <!--text-->
+                            <div class="profile-text">
+                                <strong>James </strong>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <!--==Rating======-->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!--==comments===-->
+                        <p>RKS Healthcare Product Store is the best. RKS never fails to dissapoint me. Healthcare products shopping has become so easy with RKS Healthcare Products Store.</Str></p>
+                    </div>
+                    <!--box------------->
+                    <div class="client-box">
+                        <!--==profile===-->
+                        <div class="client-profile">
+                            <!--img--->
+                            <img alt="client" src="https://i.imgur.com/3yv9Hkj.jpg">
+                            <!--text-->
+                            <div class="profile-text">
+                                <strong> Naveen kumar</strong>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <!--==Rating======-->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!--==comments===-->
+                        <p>KRS Healthcare Product Store is just amazing. I can buy all my healthcare products from a single place. The Products are available at very affordable prices. And, the products are delivered at the time slot you choose and prefer.</p>
+                    </div>
+                    <!--box------------->
+                    <div class="client-box">
+                        <!--==profile===-->
+                        <div class="client-profile">
+                            <!--img--->
+                            <img alt="client" src="https://i.imgur.com/Rk5RDey.jpg">
+                            <!--text-->
+                            <div class="profile-text">
+                                <strong>Divya </strong>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <!--==Rating======-->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!--==comments===-->
+                        <p>At KRS Healthcare Product Store, you can get amazing product. </p>
+                    </div>
+                </div>
+            </section>
+            <!--client-section-end---------->
+            <!--==Partnre-logo================================-->
+            <section id="partner">
+                <!--heading------------>
+                <div class="partner-heading">
+                    <h3>Our Trusted Partner</h3>
+                </div>
+                <!--logo-container----->
+                <div class="logo-container">
+                    <img alt="logo" src="https://i.imgur.com/iUOPVpm.png">
+                    <img alt="logo" src="https://i.imgur.com/kyp2UKO.png">
+                    <img alt="logo" src="https://i.imgur.com/072qc5v.png">
+                    <img alt="logo" src="https://i.imgur.com/AADIKZS.png">
+                </div>
+            </section>
+            <!--logo-section-end--------------------->
+            <!--==download-app====================================-->
+            <section id="download-app">
+                <!--img----------------------->
+                <div class="app-img">
+                    <img alt="app" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/27/53/d3/2753d32e-7304-e755-c546-8ae12f173dbe/de5ed799-e890-4925-bf28-a28109fc5f2c_1242x2688bb-4.png/300x0w.jpg">
+                </div>
+                <!--text---------------------->
+                <div class="download-app-text">
+                    <strong>Download App</strong>
+                    <p>Healthcare Products shopping made easier. Now, you don't need to open the website for placing orders. Download the <b>KRS Healthcare Products Store</b> app from Play Store and App Store to start shopping easily and faster. <br> HAPPY SHOPPING!</b></p>
+                    <!--btns------->
+                    <div class="download-btns">
+                        <a href="App HTML.html"><img alt="" src="https://i.imgur.com/dMsRGJH.png"></a>
+                        <a href="App HTML.html"><img alt="" src="https://i.imgur.com/puDrZNe.png"></a>
+                    </div>
+                </div>
+            </section>
+            <!--download-app-section-end------------------------->
+            <!--==Footer=============================================-->
+            <footer>
+                <div class="footer-container">
+                    <!--logo-container------>
+                    <div class="footer-logo">
+                        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTanhrZuXebmQeaLd7hhj4Mbe5NEPKIU0WS_Y2HCHpfi3wgNf6wcTVM7fpoXADmfxlvfVU&usqp=CAU"><span>R</span>KS</a>
+                        <!--social----->
+                        <div class="footer-social">
+                            
+                        </div>
+                    </div>
+                    <!--links------------------------->
+                <div class="footer-links">
+                    <strong>Product</strong>
+                    <ul>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Packages</a></li>
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">New</a></li>
+                    </ul>
+                </div>
+                <!--links------------------------->
+                <div class="footer-links">
+                    <strong>Category</strong>
+                    <ul>
+                        <li><a href="#">Beauty</a></li>
+                        <li><a href="#">Food Drink</a></li>
+                        <li><a href="#">Baby</a></li>
+                        <li><a href="#">Medicine</a></li>
+                    </ul>
+                </div>
+                <!--links-------------------------->
+                <div class="footer-links">
+                    <strong>Contact</strong>
+                    <ul>
+                        <li><a href="#">Phone : +9587345620</a></li>
+                        <li><a href="#">Email : krshealthcare@gmail.com</a></li>
+                        <li><a href="#">Cities we serve</a></li>
+                    </ul>
+                    <br><p style="color: #5a8bb6;">Copyright ©2023 | All Rights Reserved</p>
+                </div>
+                </div>
+            </footer>
+        </body>
+    </html>
