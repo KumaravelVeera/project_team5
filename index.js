@@ -165,9 +165,7 @@ app.post('/checkout', (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+
 
 app.get('/feedback', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Feedback Form HTML.html'));
@@ -181,3 +179,6 @@ app.get('/chat', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
 
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
