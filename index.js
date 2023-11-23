@@ -12,7 +12,7 @@ const port = 3002;
 const db = new sqlite3.Database('users5.db');
 
 // Your Azure Storage account connection string
-const connectionString = 'DefaultEndpointsProtocol=https;AccountName=cloudshell332255291;AccountKey=rIu+Fgw8oN3NRiAII07pMN2JjdfSPXOnv5Uc+jdcvtrHxn80qP41vpiqCea/tD4bquxlEpZoT24V+AStQKoifA==;EndpointSuffix=core.windows.net';
+const connectionString = 'DefaultEndpointsProtocol=https;AccountName=cloudshell2048044273;AccountKey=Wv9EsrgHgwekNF436wdlHZnnElfnFWlfQpDk1+c1zXdcQCUszAVjsu1RIutYs88yi456JzX0Q0KD+AStG65zaw==;EndpointSuffix=core.windows.net';
 
 // Create a BlobServiceClient
 const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
