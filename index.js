@@ -17,9 +17,20 @@ app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
+
+
 // Define a route for the registration page
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// Define a route for the registration page
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+// Define a route for the registration page
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
 });
 
 // Define a route for the registration page
