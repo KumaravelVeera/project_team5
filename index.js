@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
+
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }))
+
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
