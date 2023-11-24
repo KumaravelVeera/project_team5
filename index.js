@@ -8,6 +8,39 @@ const app = express();
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
+
+
+// Connect to SQLite database
+const db = new sqlite3.Database('users5.db');
+
+// Create a table for users if it doesn't exist
+db.run(`
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  password TEXT NOT NULL
+);)`
+);
+
+// Create users table if not exists
+db.run(`
+  CREATE TABLE IF NOT EXISTS cash_on_delivery_details (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    address TEXT,
+    email TEXT,
+    locality_apartment TEXT,
+    pincode TEXT,
+    contact_no TEXT,
+    date TEXT,
+    time_slot TEXT
+  )
+`);
+
+
 // Define a route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
