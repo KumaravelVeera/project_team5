@@ -17,21 +17,41 @@ app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
+// Handle registration form submission
+app.post('/register', (req, res) => {
+  const { first_name, last_name, email, phone, password } = req.body;
 
+  // Insert new user into the SQLite database
+  db.run(
+    'INSERT INTO users (first_name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?)',
+    [first_name, last_name, email, phone, password],
+    (error) => {
+      if (error) {
+        res.redirect('/login');
+      }
+      res.redirect('/login');
+    }
+  );
+});
 
 // Define a route for the registration page
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
 
-// Define a route for the registration page
-app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+  // Check if the user exists in the SQLite database
+  db.get('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (error, user) => {
+    if (error || !user) {
+      res.redirect('/');
+    }
+
+    // Redirect to the home page after successful login
+    res.redirect('/');
+  });
 });
-// Define a route for the registration page
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
-});
+
 
 // Define a route for the registration page
 app.get('/checkout', (req, res) => {
