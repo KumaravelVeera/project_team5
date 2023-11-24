@@ -99,6 +99,39 @@ app.get('/checkout', (req, res) => {
   res.status(500).send('Error during login. Please try again.');
 });
 
+app.post('/checkout', async (req, res) => {
+  const {
+    name,
+    address,
+    email,
+    locality_apartment,
+    pincode,
+    contact_no,
+    date,
+    time_slot
+  } = req.body;
+
+  try {
+    const user = await User.create({
+      name,
+      address,
+      email,
+      locality_apartment,
+      pincode,
+      contact_no,
+      date,
+      time_slot,
+    });
+
+    // You can also perform additional actions here if needed
+
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Submission failed. Please try again.');
+  }
+});
+
 app.get('/feedback', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Feedback Form HTML.html'));
 });
