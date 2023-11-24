@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@azure/storage-blob": "^12.17.0",
+    "@azure/cosmos": "^4.0.0",
     "express": "^4.13.3",
     "sqlite3": "^5.1.6",
     "multer": "^1.4.5-lts.1"
