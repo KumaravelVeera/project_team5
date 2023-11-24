@@ -15,13 +15,13 @@ app.use(express.static(__dirname + '/public'))
 
 const { CosmosClient } = require("@azure/cosmos");
 
-const endpoint = "<your-cosmos-db-endpoint>";
-const key = "<your-cosmos-db-key>";
+const endpoint = "https://cosmodbkrs.mongo.cosmos.azure.com:443/";
+const key = "mongodb://cosmodbkrs:o9t84eKiCV6HOm8Gc3lHZM4VNitIM4DDoxGusxSFhbs3vmoIiKLjthv8KBAUEf9dMDkfXCtfvgf4ACDbguEENg==@cosmodbkrs.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmodbkrs@";
 
 const client = new CosmosClient({ endpoint, key });
 
-const databaseId = "<your-database-id>";
-const containerId = "<your-container-id>";
+const databaseId = "krsuser";
+const containerId = "user1";
 
 const database = client.database(databaseId);
 const container = database.container(containerId);
