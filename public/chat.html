@@ -3,94 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure Health Bot Direct Line Integration</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Document</title>
 </head>
 <body>
-
-<div id="chatContainer">
-    <div id="chat"></div>
-    <input type="text" id="userInput" placeholder="Type your message...">
-    <button onclick="sendMessage()">Send</button>
-</div>
-
-<script>
-    const directLineSecret = 'Mor4upD14c4.Kp3cFzr4wJjX5RmcyOtFIQKw__zy-jp_9aY6-kS8V3o';
-    const directLineEndpoint = 'https://directline.botframework.com/v3/directline';
-
-    const conversationId = generateConversationId();
-
-    function generateConversationId() {
-        // You can implement your logic to generate a unique conversation ID
-        return 'myUniqueConversationId';
-    }
-
-    function startConversation() {
-        $.ajax({
-            url: `${directLineEndpoint}/conversations`,
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${directLineSecret}`
-            },
-            success: function (data) {
-                // Conversation started successfully
-                sendMessage();
-            },
-            error: function (error) {
-                console.error('Error starting conversation:', error);
-            }
-        });
-    }
-
-    function sendMessage() {
-        const userMessage = $('#userInput').val();
-
-        $.ajax({
-            url: `${directLineEndpoint}/conversations/${conversationId}/activities`,
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${directLineSecret}`,
-                'Content-Type': 'application/json',
-            },
-            data: JSON.stringify({
-                type: 'message',
-                from: { id: 'user' },
-                text: userMessage
-            }),
-            success: function (data) {
-                // Message sent successfully
-                $('#userInput').val('');
-                receiveBotMessage();
-            },
-            error: function (error) {
-                console.error('Error sending message:', error);
-            }
-        });
-    }
-
-    function receiveBotMessage() {
-        $.ajax({
-            url: `${directLineEndpoint}/conversations/${conversationId}/activities`,
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${directLineSecret}`
-            },
-            success: function (data) {
-                // Process and display bot's response
-                const botMessage = data.activities.find(activity => activity.from.id === 'bot');
-                if (botMessage) {
-                    $('#chat').append(`<p>${botMessage.text}</p>`);
-                }
-            },
-            error: function (error) {
-                console.error('Error receiving bot message:', error);
-            }
-        });
-    }
-
-    // Start the conversation when the page loads
-    startConversation();
-</script>
-
+    <iframe src='https://webchat.botframework.com/embed/aikrsapp-bot?s=dZmRQfiO9UI.FH5DxINwiA3LCkFAad0IcKqkwvPYTAT9BLm6R1zMyp8'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
 </body>
 </html>
