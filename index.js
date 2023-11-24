@@ -13,37 +13,18 @@ app.use(express.urlencoded({ extended: true }))
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
+const { CosmosClient } = require("@azure/cosmos");
 
+const endpoint = "<your-cosmos-db-endpoint>";
+const key = "<your-cosmos-db-key>";
 
-// Connect to SQLite database
-const db = new sqlite3.Database('users5.db');
+const client = new CosmosClient({ endpoint, key });
 
-// Create a table for users if it doesn't exist
-db.run(`
-CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  phone TEXT NOT NULL,
-  password TEXT NOT NULL
-);)`
-);
+const databaseId = "<your-database-id>";
+const containerId = "<your-container-id>";
 
-// Create users table if not exists
-db.run(`
-  CREATE TABLE IF NOT EXISTS cash_on_delivery_details (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    address TEXT,
-    email TEXT,
-    locality_apartment TEXT,
-    pincode TEXT,
-    contact_no TEXT,
-    date TEXT,
-    time_slot TEXT
-  )
-`);
+const database = client.database(databaseId);
+const container = database.container(containerId);
 
 
 // Define a route for the home page
@@ -57,55 +38,27 @@ app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
-
-
 // Handle registration form submission
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
   const { first_name, last_name, email, phone, password } = req.body;
 
-  // Insert new user into the SQLite database
-  db.run(
-    'INSERT INTO users (first_name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?)',
-    [first_name, last_name, email, phone, password],
-    (error) => {
-      if (error) {
-        return res.status(500).send('Registration failed. Please try again.');
-      }
-      res.redirect('/login');
-    }
-  );
+  try {
+    await container.items.create({
+      first_name,
+      last_name,
+      email,
+      phone,
+      password
+    });
+
+    res.redirect('/login');
+  } catch (error) {
+    res.status(500).send('Registration failed. Please try again.');
+  }
 });
 
-// Define a route for the registration page
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-// Handle login form submission
-app.post('/login', (req, res) => {
-  const { email, password } = req.body;
-
-  // Check if the user exists in the SQLite database
-  db.get('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (error, user) => {
-    if (error || !user) {
-      return res.status(401).send('Invalid username or password');
-    }
-
-    // Redirect to the home page after successful login
-    res.redirect('/');
-  });
-});
-
-
-
-
-// Define a route for the registration page
-app.get('/checkout', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'checkoutdeetails.html'));
-});
-
-
-app.post('/checkout', (req, res) => {
+// Handle checkout form submission
+app.post('/checkout', async (req, res) => {
   const {
     name,
     address,
@@ -117,17 +70,62 @@ app.post('/checkout', (req, res) => {
     time_slot
   } = req.body;
 
-  // Insert new details into the SQLite database
-  db.run(
-    'INSERT INTO cash_on_delivery_details (name, address, email, locality_apartment, pincode, contact_no, date, time_slot) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-    [name, address, email, locality_apartment, pincode, contact_no, date, time_slot],
-    (error) => {
-      if (error) {
-        return res.status(500).send('Submission failed. Please try again.');
-      }
-      res.redirect('/');
+  try {
+    await container.items.create({
+      name,
+      address,
+      email,
+      locality_apartment,
+      pincode,
+      contact_no,
+      date,
+      time_slot
+    });
+
+    res.redirect('/');
+  } catch (error) {
+    res.status(500).send('Submission failed. Please try again.');
+  }
+});
+
+
+// Define a route for the registration page
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// Handle login form submission
+// Handle login form submission
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const querySpec = {
+      query: "SELECT * FROM c WHERE c.email = @email AND c.password = @password",
+      parameters: [
+        { name: "@email", value: email },
+        { name: "@password", value: password }
+      ]
+    };
+
+    const { resources } = await container.items.query(querySpec).fetchAll();
+
+    if (resources.length === 0) {
+      return res.status(401).send('Invalid username or password');
     }
-  );
+
+    res.redirect('/');
+  } catch (error) {
+    res.status(500).send('Error during login. Please try again.');
+  }
+});
+
+
+
+
+// Define a route for the registration page
+app.get('/checkout', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'checkoutdeetails.html'));
 });
 
 app.get('/feedback', (req, res) => {
