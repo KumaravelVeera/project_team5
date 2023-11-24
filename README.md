@@ -68,8 +68,37 @@ The project leverages the following Azure services:
 - *Azure Language Services: Azure Language Services include a set of APIs and services that enable natural language processing (NLP) capabilities in applications
 
 ## Demo Screenshots
+
+![1](https://github.com/KumaravelVeera/project_team5/assets/145631234/654c51b6-8bca-4b3e-bb8d-65ba0b44f2e4)
+![2](https://github.com/KumaravelVeera/project_team5/assets/145631234/8933cddb-b2a0-4a98-9fa7-8715352f8d74)
+![3](https://github.com/KumaravelVeera/project_team5/assets/145631234/c51fcc70-2c3a-4773-8332-82e24ce17beb)
+![4](https://github.com/KumaravelVeera/project_team5/assets/145631234/4cac8a29-1855-4c67-8147-7e3832122556)
+![5](https://github.com/KumaravelVeera/project_team5/assets/145631234/e61b5270-2213-40ec-b006-5eed94a98d16)
+
+
+![6](https://github.com/KumaravelVeera/project_team5/assets/145631234/365f4b5e-2fc9-4777-8248-c71afc8e24bd)
+![7](https://github.com/KumaravelVeera/project_team5/assets/145631234/52896312-827a-4abb-8a7c-1d6c777f4524)
+![8](https://github.com/KumaravelVeera/project_team5/assets/145631234/81eeed40-25c9-4058-bd36-334498ced0fb)
+![9](https://github.com/KumaravelVeera/project_team5/assets/145631234/888fd967-cbd3-4372-9115-7409f2c178c1)
+
+![10](https://github.com/KumaravelVeera/project_team5/assets/145631234/f18dff06-0053-48da-aa4d-cd5769f3e6b1)
+
+
+![11](https://github.com/KumaravelVeera/project_team5/assets/145631234/7a5c4283-ccf7-4da2-8cf7-8abcbeba1af3)
+
+![12](https://github.com/KumaravelVeera/project_team5/assets/145631234/76a0dde0-4cb5-411d-927d-ae01c3a64bab)
+![13](https://github.com/KumaravelVeera/project_team5/assets/145631234/a3ff5441-3418-4500-b77c-cf6d4a2290cc)
+![14](https://github.com/KumaravelVeera/project_team5/assets/145631234/4fafa0fb-45fe-4466-9c1f-4ee2bf9a13d0)
+![15](https://github.com/KumaravelVeera/project_team5/assets/145631234/b5fb8c7b-2725-4b8a-a68c-df09dca0ba6f)
+![16](https://github.com/KumaravelVeera/project_team5/assets/145631234/bc662c32-997b-4238-b294-7c33d75d186c)
+![17](https://github.com/KumaravelVeera/project_team5/assets/145631234/0c10c4a5-9618-49a3-814c-e7aa53690add)
+![18](https://github.com/KumaravelVeera/project_team5/assets/145631234/b8c582b1-29ee-4213-936e-b4700da53b83)
+![19](https://github.com/KumaravelVeera/project_team5/assets/145631234/345942d0-e0ac-43aa-9037-56a3fdd95bfb)
+![20](https://github.com/KumaravelVeera/project_team5/assets/145631234/8dbf392c-0702-4154-8561-4cebbe7e4d2c)
 ## Demo Video
+
 ## Project URL
+https://azurewebkrs.azurewebsites.net/
 ## Contributing
 This project is a collaborative effort, and each team member has a specific role:
 
