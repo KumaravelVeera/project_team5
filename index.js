@@ -13,32 +13,37 @@ app.use(express.urlencoded({ extended: true }))
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
+const express = require('express');
 const { CosmosClient } = require("@azure/cosmos");
+const path = require('path');
 
-const endpoint = "https://cosmodbkrs.mongo.cosmos.azure.com:443/";
-const key = "mongodb://cosmodbkrs:o9t84eKiCV6HOm8Gc3lHZM4VNitIM4DDoxGusxSFhbs3vmoIiKLjthv8KBAUEf9dMDkfXCtfvgf4ACDbguEENg==@cosmodbkrs.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmodbkrs@";
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+const endpoint = "YOUR_COSMOS_DB_ENDPOINT";
+const key = "YOUR_COSMOS_DB_KEY";
 const client = new CosmosClient({ endpoint, key });
-
 const databaseId = "krsuser";
 const containerId = "user1";
-
 const database = client.database(databaseId);
 const container = database.container(containerId);
 
+app.set('port', (process.env.PORT || 5000));
 
-// Define a route for the home page
+// Define routes
+
+// Home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
-
 });
 
-// Define a route for the registration page
+// Registration page
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
-// Handle registration form submission
 app.post('/register', async (req, res) => {
   const { first_name, last_name, email, phone, password } = req.body;
 
@@ -53,11 +58,12 @@ app.post('/register', async (req, res) => {
 
     res.redirect('/login');
   } catch (error) {
+    console.error(error);
     res.status(500).send('Registration failed. Please try again.');
   }
 });
 
-// Handle checkout form submission
+// Checkout page
 app.post('/checkout', async (req, res) => {
   const {
     name,
@@ -84,18 +90,16 @@ app.post('/checkout', async (req, res) => {
 
     res.redirect('/');
   } catch (error) {
+    console.error(error);
     res.status(500).send('Submission failed. Please try again.');
   }
 });
 
-
-// Define a route for the registration page
+// Login page
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// Handle login form submission
-// Handle login form submission
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -116,14 +120,12 @@ app.post('/login', async (req, res) => {
 
     res.redirect('/');
   } catch (error) {
+    console.error(error);
     res.status(500).send('Error during login. Please try again.');
   }
 });
 
-
-
-
-// Define a route for the registration page
+// Other pages
 app.get('/checkout', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'checkoutdeetails.html'));
 });
@@ -140,7 +142,6 @@ app.get('/chat', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
 
-
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+app.listen(app.get('port'), () => {
+  console.log(`Node app is running at localhost:${app.get('port')}`);
+});
