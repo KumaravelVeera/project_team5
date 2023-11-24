@@ -92,13 +92,6 @@ app.post('/login', async (req, res) => {
 app.get('/checkout', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'checkoutdeetails.html'));
 });
-
-// Define a route for the registration page
-app.get('/checkout', (req, res) => {
-  console.error(error);
-  res.status(500).send('Error during login. Please try again.');
-});
-
 app.post('/checkout', async (req, res) => {
   const {
     name,
