@@ -58,6 +58,11 @@ app.get('/checkout', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'checkoutdeetails.html'));
 });
 
+// Define a route for the registration page
+app.get('/checkout', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Home Page HTML.html'));
+});
+
 app.get('/feedback', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Feedback Form HTML.html'));
 });
