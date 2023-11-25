@@ -74,7 +74,7 @@
 <body>
  
 
-  <form action="/checkout" method="post">
+  <form action="/checkoutdeetails" method="post">
     <h2>Checkout Form</h2>
 
     <label for="name">Name:</label>
@@ -101,7 +101,7 @@
     <label for="time_slot">Time Slot:</label>
     <input type="text" id="time_slot" name="time_slot" required>
 
-    <button type="submit" class="contact-form-btn" id = 'submit' onclick="booking()">
+    <button type="submit" class="contact-form-btn" id = 'submit' onclick="onsubmit()">
 
                        
                             
@@ -137,7 +137,7 @@
         error_message.innerHTML=text;
         return false;
     }
-    if(email.indexof("@") == -1 || email.length < 6){
+    if(email.indexOf("@") == -1 || email.length < 6){
         text="Please enter a valid E-mail ID.";
         error_message.innerHTML=text;
         return false;
@@ -150,9 +150,9 @@ selectElement.addEventListener('change' , function() {
 selectedOptionElement.textContent = selectElement.value;
 });
 
-function booking() {
-  alert("Your Purchese Successfully Booked.Yours Products Will Deliver On Time ");
-  document.getElementById('booking').reset();
+function submit() {
+  alert("Your Purchese Successfully submit.Yours Products Will Deliver On Time ");
+  document.getElementById('submit').reset();
   return false;
 
   }
