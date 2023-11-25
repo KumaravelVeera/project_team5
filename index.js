@@ -136,6 +136,9 @@ app.get('/aboutus', (req, res) => {
 app.get('/chat', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
 });
+app.get('/shopping', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Shopping Cart HTML.html'));
+});
 
 
 app.listen(app.get('port'), function() {
