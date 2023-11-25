@@ -17,6 +17,10 @@
    
         
       }
+
+     
+
+      
       form {
         background-color:rgb(172, 204, 226);
         padding: 20px;
@@ -97,7 +101,7 @@
     <label for="time_slot">Time Slot:</label>
     <input type="text" id="time_slot" name="time_slot" required>
 
-    <button type="submit" class="contact-form-btn" id = 'submit' onclick="onsubmit()">
+    <button type="submit" class="contact-form-btn" id = 'submit' onclick="booking()">
 
                        
                             
@@ -139,9 +143,6 @@
         return false;
     }
 }
-
-
-       
 const selectElement = document.getElementById('options');
 const selectedOptionElement = document.getElementById('selectedOption');
 
@@ -149,11 +150,9 @@ selectElement.addEventListener('change' , function() {
 selectedOptionElement.textContent = selectElement.value;
 });
 
-function submit() {
-  alert("Your Purchese Successfully submit.Yours Products Will Deliver On Time ");
-  
-  }
-
+function booking() {
+  alert("Your Purchese Successfully Booked.Yours Products Will Deliver On Time ");
+  }
 </script>
 </body>
 </html>
