@@ -74,7 +74,7 @@
 <body>
  
 
-  <form action="/checkout" method="post">
+  <form action="/" method="post">
     <h2>Checkout Form</h2>
 
     <label for="name">Name:</label>
@@ -152,6 +152,9 @@ selectedOptionElement.textContent = selectElement.value;
 
 function booking() {
   alert("Your Purchese Successfully Booked.Yours Products Will Deliver On Time ");
+  document.getElementById('booking').reset();
+  return false;
+
   }
 </script>
 </body>
