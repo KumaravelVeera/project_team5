@@ -96,7 +96,7 @@ The project leverages the following Azure services:
 ![19](https://github.com/KumaravelVeera/project_team5/assets/145631234/345942d0-e0ac-43aa-9037-56a3fdd95bfb)
 ![20](https://github.com/KumaravelVeera/project_team5/assets/145631234/8dbf392c-0702-4154-8561-4cebbe7e4d2c)
 ## Demo Video
-
+https://youtu.be/wvsxyTYm8eA?feature=shared
 ## Project URL
 https://azurewebkrs.azurewebsites.net/
 ## Contributing
